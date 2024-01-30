@@ -73,7 +73,7 @@
               rgba(0, 0, 0, 0.6),
               rgba(0, 0, 0, 0.8)
             ),
-            url("/images/bg-hero.jpeg");
+            url("/images/bg-hero.webp");
           background-repeat: no-repeat;
           /* object-fit: cover; */
           background-size: cover;
@@ -189,21 +189,24 @@
       >
         <div class="flex flex-col items-center">
           <h5
-            class="text-red text-[18px] md:text-[24px] tracking-[3px] font-bold hero__title"
+            id="hero__title"
+            class="text-red text-[18px] md:text-[24px] tracking-[3px] font-bold"
           >
             HELLO, WORLD.
           </h5>
           <h1
-            class="text-[32px] md:text-[60px] lg:text-[84px] font-[700] text-center hero__title2"
+            id="hero__title2"
+            class="text-[32px] md:text-[60px] lg:text-[84px] font-[700] text-center"
           >
             I'm Web Developer.
           </h1>
           <span
-            class="md:border-x-2 border-white px-[1rem] text-[13px] md:text-[1.2rem] uppercase hero__span"
+            id="hero__span"
+            class="md:border-x-2 border-white px-[1rem] text-[13px] md:text-[1.2rem] uppercase"
             >Full Stack Developer</span
           >
         </div>
-        <div class="btn__hero">
+        <div id="btn__hero">
           <a
             href="#about"
             class="md:px-6 px-4 py-3 md:py-4 text-[13px] bg-none border-2 font-bold poppins__font tracking-[3px] uppercase hover:border-[#cc005f] transition-colors duration-300 ease-in-out"
@@ -213,36 +216,26 @@
         </div>
       </div>
       <div
+        id="social"
         class="text-white absolute bottom-[2rem] w-full text-[2rem] flex gap-[2rem] justify-center"
       >
         <a
           href="https://web.facebook.com/profile.php?id=100080204032284"
-          class="social__hero"
           target="_blank"
-          ><i class="ri-facebook-fill social__hover social__hover"></i
+          ><i class="ri-facebook-fill social__hover"></i
         ></a>
-        <a
-          href="https://www.instagram.com/yth_epan/"
-          target="_blank"
-          class="social__hero"
-          ><i class="ri-instagram-line social__hover social__hover"></i
+        <a href="https://www.instagram.com/yth_epan/" target="_blank"
+          ><i class="ri-instagram-line social__hover"></i
         ></a>
-        <a
-          href="whatsapp://send?phone=089670137890"
-          target="_blank"
-          class="social__hero"
-        >
+        <a href="whatsapp://send?phone=089670137890" target="_blank">
           <i class="ri-whatsapp-line social__hover"></i
         ></a>
         <a
           href="https://www.linkedin.com/in/evan-kusyanto-80a43a25b/"
           target="_blank"
-          class="social__hero"
           ><i class="ri-linkedin-fill social__hover"></i
         ></a>
-        <a
-          href="mailto:evan.kusyanto@students.amikom.ac.id"
-          class="social__hero"
+        <a href="mailto:evan.kusyanto@students.amikom.ac.id"
           ><i class="ri-mail-line social__hover"></i
         ></a>
       </div>
@@ -260,13 +253,15 @@
                 <h2 class="big__title text-center">Let me introduce myself.</h2>
               </div>
               <div
-                class="flex flex-col md:flex-row items-center max-w-[750px] gap-y-[1rem]"
+                class="flex flex-col md:flex-row items-center max-w-[750px] gap-[1rem]"
               >
-                <div class="w-full md:w-[150px] flex justify-center">
+                <div class="w-[110px] h-[110px] flex justify-center">
                   <img
-                    src="/images/profile.jpeg"
+                    src="/images/profile.jpg"
                     alt=""
-                    class="w-[110px] h-[110px] object-cover rounded-full bg-center"
+                    width="100"
+                    loading="lazy"
+                    class="object-cover rounded-full bg-center"
                   />
                 </div>
                 <p class="flex-1 text-[20px] text-[#888888] text-justify">
@@ -418,7 +413,7 @@
       <div class="container flex flex-col gap-y-[3rem]">
         <div class="flex flex-col items-center resume__animate">
           <h5 class="small__title">RESUME</h5>
-          <h2 class="big__title">More of my credentials.</h2>
+          <h2 class="big__title text-center">More of my credentials.</h2>
           <p class="text-[17px] color-text text-center">
             Ini informasi pendidikan dan pengalaman yang telah saya jalani
             selama ini
@@ -584,7 +579,7 @@
         <div class="flex text-center flex-col mb-[3rem]">
           <h5 class="small__title">PORTFOLIO</h5>
           <h2 class="big__title">Check Out Some of My Works.</h2>
-          <p class="text-[17px] color-text text-center">
+          <p class="text-[17px] text-gray-800 text-center">
             Ini adalah beberapa project yang telah saya kerjakan mulai dari
             project tugas kampus dan yang telah saya pelajari sendiri
           </p>
@@ -592,12 +587,17 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
           <div class="">
-            <img src="/images/porto1.jpg" alt="" class="w-full object-cover" />
+            <img
+              src="/images/porto1.jpg"
+              alt=""
+              class="w-full object-cover"
+              loading="lazy"
+            />
             <div class="p-2 flex flex-col gap-y-[1rem]">
               <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
                 XGames
               </h4>
-              <p class="text-[17px] color-text">
+              <p class="text-[17px] text-gray-800">
                 Ini adalah web slicing yang saya buat dari design yang saya
                 dapatkan diinternet untuk melatih kemapuan front end saya
               </p>
@@ -616,12 +616,17 @@
             </div>
           </div>
           <div class="">
-            <img src="/images/porto2.jpg" alt="" class="w-full object-cover" />
+            <img
+              src="/images/porto2.jpg"
+              alt=""
+              class="w-full object-cover"
+              loading="lazy"
+            />
             <div class="p-2 flex flex-col gap-y-[1rem]">
               <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
                 XWatch
               </h4>
-              <p class="text-[17px] color-text">
+              <p class="text-[17px] text-gray-800">
                 Ini adalah web slicing yang saya buat dari design yang saya
                 dapatkan diinternet untuk melatih kemapuan front end saya
               </p>
@@ -640,12 +645,17 @@
             </div>
           </div>
           <div class="">
-            <img src="/images/porto3.jpg" alt="" class="w-full object-cover" />
+            <img
+              src="/images/porto3.jpg"
+              alt=""
+              class="w-full object-cover"
+              loading="lazy"
+            />
             <div class="p-2 flex flex-col gap-y-[1rem]">
               <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
                 App Rekaban kehadiran dan absen Pengajian
               </h4>
-              <p class="text-[17px] color-text">
+              <p class="text-[17px] text-gray-800">
                 (App Local) Ini adalah web yang saya buat untuk mempercepat
                 waktu dalam merekap absensi pengajian pada masjid Al-Mansurin
                 Pingit Web ini saya kemabangkan dengan Laravel Livewire

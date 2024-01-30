@@ -60,7 +60,6 @@ window.addEventListener("scroll", function () {
       ".nav__menu a[href*=" + sectionId + "]"
     );
     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
-      console.log(sectionClass.getAttribute("href"));
       navLink.forEach((item) => {
         item.classList.remove("active");
       });
@@ -79,14 +78,15 @@ const sr = ScrollReveal({
   origin: "bottom",
 });
 
-sr.reveal(".hero__title");
-sr.reveal(".hero__title2", { delay: 200 });
-sr.reveal(".hero__span", { delay: 250 });
-sr.reveal(".btn__hero", { delay: 300 });
+sr.reveal("#hero__title");
+sr.reveal("#hero__title2", { delay: 200 });
+sr.reveal("#hero__span", { delay: 250 });
+sr.reveal("#btn__hero", { delay: 300 });
 sr.reveal(".about__animate", { distance: "0" });
 sr.reveal(".resume__animate");
 
-const socialHero = document.querySelectorAll(".social__hero");
+const socialHero = document.querySelectorAll("#social a");
+console.log(socialHero);
 socialHero.forEach((item, index) => {
   sr.reveal(item, { delay: 100 * index });
 });
