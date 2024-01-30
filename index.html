@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Muhammad Evan K</title>
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        * {
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        .poppins__font {
+          font-family: "Poppins", sans-serif;
+        }
+        .lore__font {
+          font-family: "Lora", serif;
+          font-optical-sizing: auto;
+        }
+        body {
+          @apply lore__font;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @apply poppins__font;
+        }
+
+        img {
+          @apply max-w-[100%] h-auto block;
+        }
+
+        .container {
+          @apply md:max-w-[1150px] mx-auto lg:px-[2rem] 2xl:px-0  px-[1rem];
+        }
+
+        .nav__show {
+          @apply h-[210px] z-[10] border-t-2 md:border-none border-gray-100;
+        }
+
+        .nav__hide {
+          @apply h-0 z-[-1] py-0 border-none;
+        }
+        .nav {
+          transition: all 0.4s ease-in-out;
+        }
+        .img__hero {
+          background: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.6),
+              rgba(0, 0, 0, 0.8)
+            ),
+            url("/images/bg-hero.jpeg");
+          background-repeat: no-repeat;
+          /* object-fit: cover; */
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        .text-red {
+          @apply text-[#FF0077];
+        }
+        .bg-red {
+          @apply bg-[#FF0077];
+        }
+
+        .active {
+          @apply text-red-500;
+        }
+        .line__active {
+          @apply w-full;
+        }
+        .social__hover {
+          @apply hover:text-red hover:cursor-pointer duration-300 transition-colors ease-in-out;
+        }
+
+        .small__title {
+          @apply text-red uppercase font-[700] tracking-[3px];
+        }
+        .big__title {
+          @apply text-[36px] font-[700];
+        }
+        .color-text {
+          @apply text-[#888888];
+        }
+        .second__bg {
+          @apply bg-[#EBEBEB];
+        }
+        .judul__education::after {
+          @apply absolute top-0 md:top-[100%] content-[""] bg-gray-400 w-[50px] h-[3px] left-0;
+        }
+        .resume__title {
+          @apply text-[20px] font-[700] break-words md:max-w-[300px];
+        }
+        .active::after {
+          @apply content-[""] absolute bottom-0 bg-red w-full h-[2px] left-0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="absolute w-full z-[100] transition-all duration-300 ease-in-out"
+      id="header"
+    >
+      <nav
+        class="container flex justify-between py-[1.5rem] md:py-[2rem] relative w-full"
+      >
+        <h1 class="text-white z-[30]">Evan</h1>
+        <div
+          id="nav-menu"
+          class="bg-black md:bg-transparent absolute md:relative md:z-[10] md:h-auto md:w-full md:top-0 right-[0] top-[70px] nav__hide nav px-[1rem] md:px-0 overflow-hidden flex items-center"
+        >
+          <ul
+            class="poppins__font text-white flex flex-col md:flex-row gap-y-[1rem] md:justify-end md:w-full gap-x-[1.5rem] nav__menu"
+          >
+            <li class="relative px-2 group hover:text-red-500 nav__link active">
+              <a href="#home">Home</a
+              ><span
+                id="line"
+                class="absolute bottom-0 w-0 group-hover:w-full h-[2px] bg-red left-0 transition-all duration-300 ease-in-out"
+              ></span>
+            </li>
+            <li class="relative px-2 group hover:text-red-500 nav__link">
+              <a href="#about">About</a
+              ><span
+                id="line"
+                class="absolute bottom-0 w-0 group-hover:w-full h-[2px] bg-red left-0 transition-all duration-300 ease-in-out"
+              ></span>
+            </li>
+            <li class="relative px-2 group hover:text-red-500 nav__link">
+              <a href="#resume">Resume</a
+              ><span
+                id="line"
+                class="absolute bottom-0 w-0 group-hover:w-full h-[2px] bg-red left-0 transition-all duration-300 ease-in-out"
+              ></span>
+            </li>
+            <li class="relative px-2 group hover:text-red-500 nav__link">
+              <a href="#portofolio">Potofolion</a
+              ><span
+                id="line"
+                class="absolute bottom-0 w-0 group-hover:w-full h-[2px] bg-red left-0 transition-all duration-300 ease-in-out"
+              ></span>
+            </li>
+            <li class="relative px-2 group hover:text-red-500 nav__link">
+              <a href="#contact">Contact</a
+              ><span
+                id="line"
+                class="absolute bottom-0 w-0 group-hover:w-full h-[2px] bg-red left-0 transition-all duration-300 ease-in-out"
+              ></span>
+            </li>
+          </ul>
+        </div>
+        <div class="text-white">
+          <div id="close-menu" class="hidden md:hidden">
+            <i class="ri-close-line"></i>
+          </div>
+          <div id="toggle-menu" class="md:hidden">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="home" class="h-[100vh] img__hero relative z-[1]">
+      <div
+        class="container h-full flex justify-center items-center text-white flex-col gap-y-[3rem]"
+      >
+        <div class="flex flex-col items-center">
+          <h5
+            class="text-red text-[18px] md:text-[24px] tracking-[3px] font-bold hero__title"
+          >
+            HELLO, WORLD.
+          </h5>
+          <h1
+            class="text-[32px] md:text-[60px] lg:text-[84px] font-[700] text-center hero__title2"
+          >
+            I'm Web Developer.
+          </h1>
+          <span
+            class="md:border-x-2 border-white px-[1rem] text-[13px] md:text-[1.2rem] uppercase hero__span"
+            >Full Stack Developer</span
+          >
+        </div>
+        <div class="btn__hero">
+          <a
+            href="#about"
+            class="md:px-6 px-4 py-3 md:py-4 text-[13px] bg-none border-2 font-bold poppins__font tracking-[3px] uppercase hover:border-[#cc005f] transition-colors duration-300 ease-in-out"
+          >
+            More About Me <i class="ri-arrow-down-s-line"></i>
+          </a>
+        </div>
+      </div>
+      <div
+        class="text-white absolute bottom-[2rem] w-full text-[2rem] flex gap-[2rem] justify-center"
+      >
+        <a
+          href="https://web.facebook.com/profile.php?id=100080204032284"
+          class="social__hero"
+          target="_blank"
+          ><i class="ri-facebook-fill social__hover social__hover"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/yth_epan/"
+          target="_blank"
+          class="social__hero"
+          ><i class="ri-instagram-line social__hover social__hover"></i
+        ></a>
+        <a
+          href="whatsapp://send?phone=089670137890"
+          target="_blank"
+          class="social__hero"
+        >
+          <i class="ri-whatsapp-line social__hover"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/in/evan-kusyanto-80a43a25b/"
+          target="_blank"
+          class="social__hero"
+          ><i class="ri-linkedin-fill social__hover"></i
+        ></a>
+        <a
+          href="mailto:evan.kusyanto@students.amikom.ac.id"
+          class="social__hero"
+          ><i class="ri-mail-line social__hover"></i
+        ></a>
+      </div>
+    </section>
+
+    <section id="about" class="pt-[12rem] pb-[15rem]">
+      <div class="container flex flex-col gap-y-[3rem]">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-y-[2.5rem] gap-x-[2rem]"
+        >
+          <div class="md:col-span-2 about__animate">
+            <div class="flex flex-col items-center gap-y-[1.5rem]">
+              <div class="">
+                <h5 class="small__title text-center">About</h5>
+                <h2 class="big__title text-center">Let me introduce myself.</h2>
+              </div>
+              <div
+                class="flex flex-col md:flex-row items-center max-w-[750px] gap-y-[1rem]"
+              >
+                <div class="w-full md:w-[150px] flex justify-center">
+                  <img
+                    src="/images/profile.jpeg"
+                    alt=""
+                    class="w-[110px] h-[110px] object-cover rounded-full bg-center"
+                  />
+                </div>
+                <p class="flex-1 text-[20px] text-[#888888] text-justify">
+                  Halo, Saya adalah junior Full Stack Web Dev, saya mempunyai
+                  keinginan belajar tentang programming. Saya baru belajar
+                  pemrograman pada pertengahan tahun 2021 sampai sekarang. Saya
+                  memiliki pengalaman 5 bulan magang pada sebuah software house
+                  bagaian Backend Developer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[1.5rem] about__animate">
+            <h4 class="text-[18px] font-[700] tracking-[3px] uppercase">
+              Profile
+            </h4>
+            <p class="text-[17px] color-text text-justify">
+              Halo,Saya Muhammad Evan Kusyanto, biasa dipanggil Evan. Saya
+              berumur 20 tahun, dan bertempat tinggal di Klaten, Jawa Tengah.
+              Saya berstatus mahasiswa di Universitas Amikom Yogyakarta, saya
+              mengambil jurusan D3 Teknik Informatika.
+            </p>
+            <div>
+              <ul class="flex flex-col gap-[1rem]">
+                <li class="color-text">
+                  <span
+                    class="block text-black font-bold uppercase tracking-[2px] poppins__font"
+                    >Fullname :</span
+                  >Muhammad Evan Kusyanto
+                </li>
+                <li class="color-text">
+                  <span
+                    class="block text-black font-bold uppercase tracking-[2px] poppins__font"
+                    >Birth Date :</span
+                  >09 Agustus 2003
+                </li>
+                <li class="color-text">
+                  <span
+                    class="block text-black font-bold uppercase tracking-[2px] poppins__font"
+                    >Alamat :</span
+                  >Sendangrejo, Karanganom, Klaten
+                </li>
+                <li class="color-text">
+                  <span
+                    class="block text-black font-bold uppercase tracking-[2px] poppins__font"
+                    >Email :</span
+                  >evan.kusyanto@students.amikom.ac.id
+                </li>
+                <li class="color-text">
+                  <span
+                    class="block text-black font-bold uppercase tracking-[2px] poppins__font"
+                    >Whatsapp :</span
+                  >089670137890
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col gap-[1.5rem] about__animate">
+            <h5 class="text-[18px] font-[700] tracking-[3px] uppercase">
+              Skills
+            </h5>
+            <p class="text-[17px] color-text text-justify">
+              Bahasa pemrograman yang telah saya pelajari selama ini kurang
+              lebih ada 4 yaitu html,css,javascript,php. Framework atau library
+              yang sudah saya pelajari ada 6, yaitu Tailwind, Bootstrap, React
+              Js, Next js Laravel, CodeIgniter
+            </p>
+
+            <div class="flex flex-col gap-[1rem]">
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">HTML 5</h6>
+                <span class="font-bold">90%</span>
+                <span
+                  class="w-[90%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">CSS</h6>
+                <span class="font-bold">85%</span>
+                <span
+                  class="w-[85%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">JAVASCRIPT</h6>
+                <span class="font-bold">60%</span>
+                <span
+                  class="w-[60%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">PHP</h6>
+                <span class="font-bold">60%</span>
+                <span
+                  class="w-[60%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">LARAVEL</h6>
+                <span class="font-bold">65%</span>
+                <span
+                  class="w-[65%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+              <div class="flex justify-between relative py-[8px]">
+                <h6 class="font-bold tracking-[2px]">REACT JS</h6>
+                <span class="font-bold">50%</span>
+                <span
+                  class="w-[50%] h-[5px] bg-black absolute bottom-0 z-[30]"
+                ></span>
+                <span
+                  class="w-full h-[5px] bg-gray-100 absolute bottom-0"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full flex justify-center">
+          <a
+            href="/images/portofolio.png"
+            class="border-2 border-black font-bold group poppins__font uppercase tracking-[3px] py-3 px-4 md:px-6 md:py-4 relative hover:text-white z-[10]"
+            download="Muhammad-evan-kusyanto-CV"
+          >
+            Download CV
+            <span
+              class="absolute w-0 group-hover:w-full h-full bg-black left-0 top-0 transition-all ease-in-out duration-300 z-[-1]"
+            ></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="resume" class="pt-[12rem] pb-[15rem] second__bg">
+      <div class="container flex flex-col gap-y-[3rem]">
+        <div class="flex flex-col items-center resume__animate">
+          <h5 class="small__title">RESUME</h5>
+          <h2 class="big__title">More of my credentials.</h2>
+          <p class="text-[17px] color-text text-center">
+            Ini informasi pendidikan dan pengalaman yang telah saya jalani
+            selama ini
+          </p>
+        </div>
+        <div>
+          <h4 class="text-[24px] font-[700] text-red text-center mb-[3rem]">
+            Work Experience
+          </h4>
+          <div
+            class="grid grid-cols-1 gap-y-[1rem] max-w-[800px] mx-auto relative resume__animate"
+          >
+            <span
+              class="absolute h-full w-[2px] bg-gray-400 left-[19px] md:left-[355px]"
+            ></span>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 relative sm:pl-[5rem] pl-[4rem]"
+            >
+              <span
+                class="absolute top-0 md:left-[330px] bg-black rounded-full px-[12px] py-[8px] md:px-[14px] md:py-[8px]"
+                ><i
+                  class="ri-briefcase-line text-white text-[16px] md:text-[24px]"
+                ></i
+              ></span>
+              <div class="mb-[1rem]">
+                <h4 class="resume__title">Back End Developer</h4>
+                <span class="color-text">Agustus 2023 - January 2024</span>
+              </div>
+              <div class="flex flex-col gap-y-[1rem]">
+                <h4
+                  class="text-[17px] font-[700] judul__education relative pt-[1rem] md:pt-0 md:pb-[1rem]"
+                >
+                  PT Jetorbit Tehnology Indonesia
+                </h4>
+                <p class="break-words">
+                  Saya memiliki pengalaman magang sekitar 5 bulan sebagai
+                  Backend Developer di PT Jetorbit Tehnology Indonesia. Bahasa
+                  dan Framework yang saya pelajari disini adalah
+                  HTML,CSS,JS,PHP,Laravel,Jquery&Ajax,Livewire
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-[24px] font-[700] text-red text-center mb-[3rem]">
+            Education
+          </h4>
+          <div
+            class="grid grid-cols-1 gap-y-[1rem] max-w-[800px] mx-auto relative"
+          >
+            <span
+              class="absolute h-full w-[2px] bg-gray-400 left-[19px] md:left-[355px]"
+            ></span>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 relative sm:pl-[5rem] pl-[4rem] resume__animate"
+            >
+              <span
+                class="absolute top-0 md:left-[330px] bg-black rounded-full px-[12px] py-[8px] md:px-[14px] md:py-[8px]"
+                ><i
+                  class="ri-briefcase-line text-white text-[16px] md:text-[24px]"
+                ></i
+              ></span>
+              <div class="mb-[1rem]">
+                <h4 class="resume__title">Universitas Amikom Yogyakarta</h4>
+                <span class="color-text">july 2021 - 2024</span>
+              </div>
+              <div class="flex flex-col gap-y-[1rem]">
+                <h4
+                  class="text-[17px] font-[700] judul__education relative pt-[1rem] md:pt-0 md:pb-[1rem]"
+                >
+                  D3 Teknik Informatika
+                </h4>
+                <p class="break-words">
+                  Saya mahasiswa Amikom Yogyakarta jurusan D3 Teknik
+                  Informatika, saya mengambil jurusan ini karena ingin tau
+                  tentang dunia pemrograman
+                </p>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 relative sm:pl-[5rem] pl-[4rem] resume__animate"
+            >
+              <span
+                class="absolute top-0 md:left-[330px] bg-black rounded-full px-[12px] py-[8px] md:px-[14px] md:py-[8px]"
+                ><i
+                  class="ri-briefcase-line text-white text-[16px] md:text-[24px]"
+                ></i
+              ></span>
+              <div class="mb-[1rem]">
+                <h4 class="resume__title">SMK N 1 KLATEN</h4>
+                <span class="color-text">july 2018 - 2021</span>
+              </div>
+              <div class="flex flex-col gap-y-[1rem]">
+                <h4
+                  class="text-[17px] font-[700] judul__education relative pt-[1rem] md:pt-0 md:pb-[1rem]"
+                >
+                  Teknik Jaringan dan Komputer
+                </h4>
+                <p class="break-words">
+                  Saya menempuh masa smk saya di SMK N 1 Klaten jurusan Teknik
+                  Jaringan dan Komputer karena minat saya dikomputer
+                </p>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 relative sm:pl-[5rem] pl-[4rem] resume__animate"
+            >
+              <span
+                class="absolute top-0 md:left-[330px] bg-black rounded-full px-[12px] py-[8px] md:px-[14px] md:py-[8px]"
+                ><i
+                  class="ri-briefcase-line text-white text-[16px] md:text-[24px]"
+                ></i
+              ></span>
+              <div class="mb-[1rem]">
+                <h4 class="resume__title">SMP N 1 KLATEN</h4>
+                <span class="color-text">july 2015 - 2018</span>
+              </div>
+              <div class="flex flex-col gap-y-[1rem]">
+                <h4
+                  class="text-[17px] font-[700] judul__education relative pt-[1rem] md:pt-0 md:pb-[1rem]"
+                >
+                  D3 Teknik Informatika
+                </h4>
+                <p class="break-words">
+                  Pendidikan sekolah menengah saya di SMP N 1 Klaten karena
+                  merupakan sekolah favorit diklaten
+                </p>
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 relative sm:pl-[5rem] pl-[4rem] resume__animate"
+            >
+              <span
+                class="absolute top-0 md:left-[330px] bg-black rounded-full px-[12px] py-[8px] md:px-[14px] md:py-[8px]"
+                ><i
+                  class="ri-briefcase-line text-white text-[16px] md:text-[24px]"
+                ></i
+              ></span>
+              <div class="mb-[1rem]">
+                <h4 class="resume__title">SD N 2 Mojayan</h4>
+                <span class="color-text">july 2009 - 2015</span>
+              </div>
+              <div class="flex flex-col gap-y-[1rem]">
+                <h4
+                  class="text-[17px] font-[700] judul__education relative pt-[1rem] md:pt-0 md:pb-[1rem]"
+                >
+                  D3 Teknik Informatika
+                </h4>
+                <p class="break-words">
+                  Pendidikan sekolah dasar saya di SD N 2 Mojayan karena
+                  terdekat dengan rumah
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portofolio" class="pt-[12rem] pb-[15rem]">
+      <div class="container">
+        <div class="flex text-center flex-col mb-[3rem]">
+          <h5 class="small__title">PORTFOLIO</h5>
+          <h2 class="big__title">Check Out Some of My Works.</h2>
+          <p class="text-[17px] color-text text-center">
+            Ini adalah beberapa project yang telah saya kerjakan mulai dari
+            project tugas kampus dan yang telah saya pelajari sendiri
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[1rem]">
+          <div class="">
+            <img src="/images/porto1.jpg" alt="" class="w-full object-cover" />
+            <div class="p-2 flex flex-col gap-y-[1rem]">
+              <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
+                XGames
+              </h4>
+              <p class="text-[17px] color-text">
+                Ini adalah web slicing yang saya buat dari design yang saya
+                dapatkan diinternet untuk melatih kemapuan front end saya
+              </p>
+              <div class="mt-2">
+                <a
+                  href="https://xgames-mu.vercel.app/"
+                  target="_blank"
+                  class="border-2 border-black font-bold group poppins__font uppercase tracking-[3px] py-2 px-4 relative hover:text-white z-[10]"
+                >
+                  Live Preview
+                  <span
+                    class="absolute w-0 group-hover:w-full h-full bg-black left-0 top-0 transition-all ease-in-out duration-300 z-[-1]"
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <img src="/images/porto2.jpg" alt="" class="w-full object-cover" />
+            <div class="p-2 flex flex-col gap-y-[1rem]">
+              <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
+                XWatch
+              </h4>
+              <p class="text-[17px] color-text">
+                Ini adalah web slicing yang saya buat dari design yang saya
+                dapatkan diinternet untuk melatih kemapuan front end saya
+              </p>
+              <div class="mt-2">
+                <a
+                  href="https://xgames-mu.vercel.app/"
+                  target="_blank"
+                  class="border-2 border-black font-bold group poppins__font uppercase tracking-[3px] py-2 px-4 relative hover:text-white z-[10]"
+                >
+                  Live Preview
+                  <span
+                    class="absolute w-0 group-hover:w-full h-full bg-black left-0 top-0 transition-all ease-in-out duration-300 z-[-1]"
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="">
+            <img src="/images/porto3.jpg" alt="" class="w-full object-cover" />
+            <div class="p-2 flex flex-col gap-y-[1rem]">
+              <h4 class="font-bold tracking-[2px] text-[17px] uppercase">
+                App Rekaban kehadiran dan absen Pengajian
+              </h4>
+              <p class="text-[17px] color-text">
+                (App Local) Ini adalah web yang saya buat untuk mempercepat
+                waktu dalam merekap absensi pengajian pada masjid Al-Mansurin
+                Pingit Web ini saya kemabangkan dengan Laravel Livewire
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact" class="pt-[6rem] pb-[3rem] bg-black">
+      <div class="container">
+        <div
+          class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 text-white mb-[1rem]"
+        >
+          <h1 class="font-bold text-[24px]">Evan</h1>
+          <div>
+            <h2 class="font-bold text-[24px] mb-[1rem]">Link</h2>
+            <ul>
+              <li
+                class="hover:text-red transition-all ease-in-out duration-300 text-[17px]"
+              >
+                <a href="#home">Home</a>
+              </li>
+              <li
+                class="hover:text-red transition-all ease-in-out duration-300 text-[17px]"
+              >
+                <a href="#about">About</a>
+              </li>
+              <li
+                class="hover:text-red transition-all ease-in-out duration-300 text-[17px]"
+              >
+                <a href="#resume">Resume</a>
+              </li>
+              <li
+                class="hover:text-red transition-all ease-in-out duration-300 text-[17px]"
+              >
+                <a href="#portofolio">Portofolio</a>
+              </li>
+              <li
+                class="hover:text-red transition-all ease-in-out duration-300 text-[17px]"
+              >
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-bold text-[24px] mb-[1rem]">Contact Me</h2>
+            <ul class="flex gap-x-[1rem] text-[24px]">
+              <li>
+                <a
+                  href="https://web.facebook.com/profile.php?id=100080204032284"
+                  target="_blank"
+                  ><i class="ri-facebook-fill social__hover"></i
+                ></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/yth_epan/" target="_blank"
+                  ><i class="ri-instagram-line social__hover"></i
+                ></a>
+              </li>
+              <li>
+                <a href="whatsapp://send?phone=089670137890" target="_blank"
+                  ><i class="ri-whatsapp-line social__hover"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/evan-kusyanto-80a43a25b/"
+                  target="_blank"
+                  ><i class="ri-linkedin-fill social__hover"></i
+                ></a>
+              </li>
+              <li>
+                <a href="mailto:evan.kusyanto@students.amikom.ac.id"
+                  ><i class="ri-mail-line social__hover"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <div class="w-full flex justify-center">
+          <span class="text-white mt-[2rem] text-center"
+            >Copyright © 2024. All rights reserved</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="/js/scrollreveal.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
